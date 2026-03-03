@@ -143,7 +143,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.5rem;
             margin-bottom: 3rem;
         }
 
@@ -207,11 +207,11 @@
         }
 
         .card-pimpinan h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); min-height: 2.5rem; display: flex; align-items: center; justify-content: center; }
-        .card-pimpinan p { font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        .card-pimpinan p { font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }*
 
         /* --- FOOTER --- */
         .footer { background: #101828; padding: 4rem 0 2rem; border-top: 1px solid var(--border); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+        .footer-grid { display: grid; gap: 2rem; margin-bottom: 3rem; }
         .footer-logo { font-size: 1.5rem; font-weight: 900; margin-bottom: 1rem; color: white;}
         .footer-desc { color: var(--text-gray); font-size: 0.9rem; max-width: 300px; }
         .footer-h4 { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;}
@@ -229,13 +229,13 @@
         .vm-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .vm-card {
-            padding: 3rem;
-            border-radius: 30px;
+            padding: 2rem;
+            border-radius: 40px;
             border: 1px solid var(--border);
             transition: 0.3s;
             height: 100%;
@@ -268,6 +268,7 @@
         }
 
         .vision-card .vm-icon { margin: 0 auto 2rem; }
+        .mission-card .vm-icon { margin: 0 auto 2rem; }
 
         .vm-card h3 {
             font-size: 1.75rem;
@@ -309,6 +310,18 @@
             font-size: 0.8rem;
         }
 
+        /* --- PROGRAM KERJA --- */
+        .proker-section { padding: 6rem 0; background: white; }
+
+        .proker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* --- EVENT --- */
+
         /* --- LINK --- */
         .contact-info a {
             color: inherit;
@@ -326,7 +339,7 @@
         /* --- MOBILE TOGGLE --- */
         .mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .desktop-menu {
                 position: fixed;
                 top: 70px; /* Sesuaikan dengan tinggi navbar kamu */
@@ -354,6 +367,44 @@
                 cursor: pointer;
                 font-size: 1.5rem;
             }
+            .vm-grid .vision-card {
+                grid-column: span 2;
+            }
+            .vm-grid .mission-card {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .vm-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            .vm-card {
+                padding: 1.5rem;
+                border-radius: 40px;
+            }
+            .vision-card .vm-icon {
+                margin: 0 auto 1.5rem;
+            }
+            .vm-card h3 {
+                font-size: 1.4rem;
+            }
+            .vm-card p, .mission-list li p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            #titleText {
+                font-size: 1.1rem !important;
+                min-width: 200px;
+            }
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
@@ -375,6 +426,16 @@
             .grid-pimpinan {
                 justify-content: center;
                 flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .btn-hero {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -401,6 +462,7 @@
                 <a href="#vision">Tentang Kami</a>
                 <a href="#programs">Program Kerja</a>
                 <a href="#structure">Struktur</a>
+                <a href="#event">Event</a>
                 <a href="#contact">Kontak</a>
                 <button class="btn-nav-join">Join Us</button>
             </div>
@@ -434,6 +496,7 @@
                 <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--dark);">Tentang Kami</h2>
             </div>
         <div class="vm-grid">
+
             <div class="vm-card vision-card">
                 <div class="vm-icon">
                     <i data-lucide="eye" width="30" height="30"></i>
@@ -446,7 +509,7 @@
                 <div class="vm-icon">
                     <i data-lucide="target" width="30" height="30"></i>
                 </div>
-                <h3>Misi</h3>
+                <h3 style="text-align: center;">Misi</h3>
                 <ul class="mission-list">
                     <li>
                         <div class="mission-check">1</div>
@@ -474,14 +537,14 @@
         </div>
     </section>
 
-    <section id="programs" class="vm-section" style="background: var(--light); border-top: 1px solid var(--border);">
+    <section id="programs" class="proker-section" style="background: var(--light); border-top: 1px solid var(--border);">
         <div class="container">
             <div style="text-align: center; margin-bottom: 3rem;">
                 <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--dark);">Program Kerja</h2>
                 <p style="color: var(--text-gray);">Inisiatif unggulan untuk kemajuan madrasah.</p>
             </div>
                 
-            <div class="vm-grid">
+            <div class="proker-grid">
                 <div class="vm-card mission-card">
                     <div class="vm-icon">
                         <i data-lucide="calendar-heart" width="30" height="30"></i>
@@ -602,6 +665,10 @@
             </div>
         </div>
     </section>
+
+    <section id="event" class="..."> 
+
+    </section>
     </main>
 
     <footer id="contact" class="footer">
@@ -618,6 +685,7 @@
                         <li><a href="#vision">Tentang Kami</a></li>
                         <li><a href="#programs">Program Kerja</a></li>
                         <li><a href="#structure">Struktur</a></li>
+                        <li><a href="#event">Event</a></li>
                         <li><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
@@ -669,7 +737,7 @@
             "PEMBINA", 
             "PENGURUS INTI", 
             "HUMAS MULTIMEDIA", 
-            "KESENIAN KEAGAMAAN ISLAMI", 
+            "KEAGAMAAN KESENIAN ISLAMI", 
             "OLAHRAGA SATUAN KEAMANAN", 
             "PERLENGKAPAN & PEMBEKALAN"
         ];
@@ -683,5 +751,3 @@
     </script>
 </body>
 </html>
-
-
