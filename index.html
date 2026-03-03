@@ -207,11 +207,11 @@
         }
 
         .card-pimpinan h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); min-height: 2.5rem; display: flex; align-items: center; justify-content: center; }
-        .card-pimpinan p { font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }*
+        .card-pimpinan p { font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
 
         /* --- FOOTER --- */
         .footer { background: #101828; padding: 4rem 0 2rem; border-top: 1px solid var(--border); }
-        .footer-grid { display: grid; gap: 2rem; margin-bottom: 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 2rem; margin-bottom: 3rem; }
         .footer-logo { font-size: 1.5rem; font-weight: 900; margin-bottom: 1rem; color: white;}
         .footer-desc { color: var(--text-gray); font-size: 0.9rem; max-width: 300px; }
         .footer-h4 { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;}
@@ -372,6 +372,12 @@
             }
             .vm-grid .mission-card {
                 grid-column: span 2;
+            }
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-bottom: 3rem;
             }
         }
 
